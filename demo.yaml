@@ -1,0 +1,10 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: Run uname -a and register output
+      shell: uname -a
+      register: uname_output
+
+    - name: Print uname -a output
+      debug: msg="{{ uname_output.stdout }}"
