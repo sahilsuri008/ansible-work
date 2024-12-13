@@ -8,3 +8,8 @@
 
     - name: Print uname -a output
       debug: msg="{{ uname_output.stdout }}"
+
+    - name: Install expect
+      dnf:
+        name: expect
+        state: present
